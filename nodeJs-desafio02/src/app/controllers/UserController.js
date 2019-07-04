@@ -29,7 +29,7 @@ class UserController {
 
         const user = await User.findByPk(req.userId);
 
-        if (email !== User.email) {
+        if (email !== user.email) {
             // Verificar se já existe email que  usuário está tentando
             const userExists = await User.findOne({
                 where: { email }
