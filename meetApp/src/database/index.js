@@ -2,11 +2,13 @@ import Sequelize from 'sequelize';
 
 // Pega dados do usuario
 import User from '../app/models/User';
+import File from '../app/models/File';
+import MeetUp from '../app/models/Meetups';
 
 import databaseConfig from '../config/database';
 
 // Cria array dos models
-const models = [User];
+const models = [User, File, MeetUp];
 
 class Database {
     constructor() {
