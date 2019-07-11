@@ -5,14 +5,12 @@ class User extends Model {
     static init(sequelize) {
         super.init(
             {
-                // Aqui sómente as colunas que serão definicas pelo usuário
                 name: Sequelize.STRING,
                 email: Sequelize.STRING,
                 password: Sequelize.VIRTUAL, // Virtual não existe na base de dados, só no código
                 password_hash: Sequelize.STRING
             },
             {
-                // É importante passar o sequelize como segundo parametro do init
                 sequelize
             }
         );
