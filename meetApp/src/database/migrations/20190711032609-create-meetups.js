@@ -11,7 +11,7 @@ module.exports = {
                 type: Sequelize.INTEGER,
                 references: { model: 'users', key: 'id' },
                 onUpdate: 'CASCADE',
-                onDelete: 'CASCADE',
+                onDelete: 'SET NULL',
                 allowNull: false
             },
             title: {
@@ -37,6 +37,9 @@ module.exports = {
             updated_at: {
                 type: Sequelize.DATE,
                 allowNull: false
+            },
+            canceled_at: {
+                type: Sequelize.DATE
             }
         });
     },
