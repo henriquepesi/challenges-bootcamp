@@ -92,9 +92,11 @@ class MeetupController {
                 .json({ error: "Can't update past meetups." });
         }
 
-        await meetup.update(req.body);
+        const { title, description, location, date } = await meetup.update(
+            req.body
+        );
 
-        return res.json(meetup);
+        return res.json({ title, description, location, date });
     }
 }
 
